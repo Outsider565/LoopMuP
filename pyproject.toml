@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loopmup"
+version = "0.1.0"
+description = "Loop-muP: residual scaling and hyperparameter transfer in looped Transformers"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["torch>=2.4", "transformers>=4.57.1,<4.58", "numpy>=1.24", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+data = ["datasets", "tiktoken"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2606.18524"
+Repository = "https://github.com/Outsider565/LoopMuP"
+
+[project.scripts]
+loopmup-diagnostics = "loopmup.diagnostics:main"
+loopmup-plot = "loopmup.plot_figures:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

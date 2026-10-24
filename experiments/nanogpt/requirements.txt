@@ -1,0 +1,9 @@
+torch>=2.4
+numpy>=1.24
+matplotlib>=3.7
+pytest>=8
+# data/finewebedu10B/prepare_from_hf.py only:
+# datasets
+# tiktoken
+# train.py --wandb_log=True only:
+# wandb
